@@ -1,0 +1,12 @@
+dependencies:
+  # Define a dependency from a GitHub repository
+  I2CHelper:
+    path: I2CHelper
+    git: https://github.com/alitaroosheh/InterThings.git
+  IAQHelper:
+    path: IAQHelper
+    git: https://github.com/alitaroosheh/InterThings.git
+  WiFiHelper:
+    path: WiFiHelper
+    git: https://github.com/alitaroosheh/InterThings.git
+
