@@ -5,26 +5,33 @@ dependencies:
       git: https://github.com/alitaroosheh/InterThings.git
       path: I2CHelper
       type: git
-    version: 6bf03cb6bb31851ce9fd2c98404e494da8350bb9
+    version: f1ef392cff8be997580a1c19ef0ef728f8d90923
   IAQHelper:
     component_hash: 53fd4b515391ff14c763e116c72be1d70d341923e2197e6a7357b78375f060f9
     source:
       git: https://github.com/alitaroosheh/InterThings.git
       path: IAQHelper
       type: git
-    version: 6bf03cb6bb31851ce9fd2c98404e494da8350bb9
+    version: f1ef392cff8be997580a1c19ef0ef728f8d90923
+  NVSHelper:
+    component_hash: 1b4bdf586617f5c2b3331d41f3a679918ccea2cf5737a1a53f9c14726a9b2e6b
+    source:
+      git: https://github.com/alitaroosheh/InterThings.git
+      path: NVSHelper
+      type: git
+    version: f1ef392cff8be997580a1c19ef0ef728f8d90923
   WiFiHelper:
     component_hash: 9cef12fd2843d433b9cf5c2cd742db5ecf7ad4c922dc34d7e2a0d78ae7d26fe3
     source:
       git: https://github.com/alitaroosheh/InterThings.git
       path: WiFiHelper
       type: git
-    version: 6bf03cb6bb31851ce9fd2c98404e494da8350bb9
+    version: f1ef392cff8be997580a1c19ef0ef728f8d90923
   idf:
     component_hash: null
     source:
       type: idf
     version: 5.2.2
-manifest_hash: d2f6f371a858cbbb2d0b404b5eda5dc77455c197b5d0065db43a76694f0dd313
+manifest_hash: d637bb38c2ad26c68bd2697fd1883cbe6d43b0ce63e6e01a38dd1c20a403e8d2
 target: esp32s3
 version: 1.0.0

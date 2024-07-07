@@ -9,4 +9,7 @@ dependencies:
   WiFiHelper:
     path: WiFiHelper
     git: https://github.com/alitaroosheh/InterThings.git
+  NVSHelper:
+    path: NVSHelper
+    git: https://github.com/alitaroosheh/InterThings.git
 

@@ -43,6 +43,7 @@
         "i2chelper.h": "c",
         "iotfullstack.h": "c",
         "aiq.h": "c",
-        "iaqhelper.h": "c"
+        "iaqhelper.h": "c",
+        "wifihelper.h": "c"
     }
 }
