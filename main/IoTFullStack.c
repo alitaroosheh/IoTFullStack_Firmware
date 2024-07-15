@@ -36,33 +36,33 @@ void app_main(void)
 	}
 	ESP_ERROR_CHECK(err);
 
-	WiFiInit();
+	wifiInit();
 	wifi_config_t wifiConfigSTA = {0};
 
     size_t len = sizeof(wifiConfigSTA.sta.ssid);
 
-	if (NvsLoad("wifi", "ssid", (char *)wifiConfigSTA.sta.ssid, &len) != ESP_OK)
+	if (nvsLoad("wifi", "ssid", (char *)wifiConfigSTA.sta.ssid, &len) != ESP_OK)
 	{
 		ESP_LOGI(TAG, "wifi STA SSID info doesn't exist...");
-        NvsSave("wifi", "ssid", "sta-wifi", strlen("sta-wifi"));
-        NvsLoad("wifi", "ssid", (char *)wifiConfigSTA.sta.ssid, &len);
+        nvsSave("wifi", "ssid", "sta-wifi", strlen("sta-wifi"));
+        nvsLoad("wifi", "ssid", (char *)wifiConfigSTA.sta.ssid, &len);
 	}
     len = sizeof(wifiConfigSTA.sta.password);
-    if (NvsLoad("wifi", "password", (char *)wifiConfigSTA.sta.password, &len) != ESP_OK)
+    if (nvsLoad("wifi", "password", (char *)wifiConfigSTA.sta.password, &len) != ESP_OK)
 	{
 		ESP_LOGI(TAG, "wifi STA password info doesn't exist...");
-        NvsSave("wifi", "password", "password", strlen("password"));
-        NvsLoad("wifi", "password", (char *)wifiConfigSTA.sta.password, &len);
+        nvsSave("wifi", "password", "password", strlen("password"));
+        nvsLoad("wifi", "password", (char *)wifiConfigSTA.sta.password, &len);
 	}
 
 	
 	ESP_LOGI(TAG, "wifi STA SSID: \"%s\" password: \"%s\"", (char *)wifiConfigSTA.sta.ssid, (char *)wifiConfigSTA.sta.password);
 
 	ESP_LOGI(TAG, "Start STA Mode");
-	ret = WiFiStartSTA(wifiConfigSTA, 5 * 1000);
+	ret = wifiStartSTA(wifiConfigSTA, 5 * 1000);
 	ESP_LOGI(TAG, "WiFiStartSTA: %d", ret);
 
-	xTaskCreate(&IAQTask, "IAQTask", configMINIMAL_STACK_SIZE * 2, (void *)&loopInterval, 5, NULL);
+	xTaskCreate(&iaqTask, "IAQTask", configMINIMAL_STACK_SIZE * 2, (void *)&loopInterval, 5, NULL);
 
 	while (true)
 	{

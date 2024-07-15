@@ -6,3 +6,5 @@ cert
 .pem
 .crt
 .key
+dependencies.lock
+.vscode

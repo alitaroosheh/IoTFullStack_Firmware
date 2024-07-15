@@ -12,4 +12,7 @@ dependencies:
   NVSHelper:
     path: NVSHelper
     git: https://github.com/alitaroosheh/InterThings.git
+  IOHelper:
+    path: IOHelper
+    git: https://github.com/alitaroosheh/InterThings.git
 

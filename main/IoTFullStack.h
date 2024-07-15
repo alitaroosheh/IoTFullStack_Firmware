@@ -17,6 +17,7 @@
 #include "IAQHelper.h"
 #include "WiFiHelper.h"
 #include "NVSHelper.h"
+#include "IOHelper.h"
 #include "math.h"
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
