@@ -5,35 +5,35 @@ dependencies:
       git: https://github.com/alitaroosheh/InterThings.git
       path: I2CHelper
       type: git
-    version: d31d5dbac1ed63a59fcb964fd73ce6f868215868
+    version: 9615e33460a760e446135cba7167049d91c294ec
   IAQHelper:
     component_hash: 81e58b8e17652851bb3ca0d5d65082026c7daded53eb416a3d0cf96e166e5fe9
     source:
       git: https://github.com/alitaroosheh/InterThings.git
       path: IAQHelper
       type: git
-    version: d31d5dbac1ed63a59fcb964fd73ce6f868215868
+    version: 9615e33460a760e446135cba7167049d91c294ec
   IOHelper:
     component_hash: 3906b60c9ac221aaaa7d490716eb5940119f3a0f36e25a20753a64b19c07ce69
     source:
       git: https://github.com/alitaroosheh/InterThings.git
       path: IOHelper
       type: git
-    version: d31d5dbac1ed63a59fcb964fd73ce6f868215868
+    version: 9615e33460a760e446135cba7167049d91c294ec
   NVSHelper:
-    component_hash: 176a1641190a4db56afba99bf5f1b5348eaa274123efaf774112714c288b0a4f
+    component_hash: bbe9259c564f833d8a2bfb192520f3da08478214a55ead5dc00b5151a627b901
     source:
       git: https://github.com/alitaroosheh/InterThings.git
       path: NVSHelper
       type: git
-    version: d31d5dbac1ed63a59fcb964fd73ce6f868215868
+    version: 9615e33460a760e446135cba7167049d91c294ec
   WiFiHelper:
     component_hash: 8124dd07951c333ad282a0d86506191b447f9f07751647eeca61d232ff30293e
     source:
       git: https://github.com/alitaroosheh/InterThings.git
       path: WiFiHelper
       type: git
-    version: d31d5dbac1ed63a59fcb964fd73ce6f868215868
+    version: 9615e33460a760e446135cba7167049d91c294ec
   idf:
     component_hash: null
     source:
