@@ -8,6 +8,7 @@
  * 
  */
 
+#pragma once
 
 #include <stdio.h>
 #include <bme68x.h>
@@ -18,6 +19,7 @@
 #include "WiFiHelper.h"
 #include "NVSHelper.h"
 #include "IOHelper.h"
+#include "Utilities.h"
 #include "math.h"
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
@@ -29,3 +31,8 @@
 #include "nvs_flash.h"
 #include "lwip/err.h"
 #include "lwip/sys.h"
+#include "mqtt_client.h"
+
+
+#define configPartition       	"config_nvs"
+

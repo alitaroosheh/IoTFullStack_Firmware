@@ -1,44 +1,51 @@
 dependencies:
   I2CHelper:
-    component_hash: 03809ee47c2863fd06707733bfa2c1831512eff2277496cc4ee2901b298bb1ed
+    component_hash: 906822f6e02df8defdb5de14f2a81be995bf6fd92f9e6e844da04848fc804de0
     source:
       git: https://github.com/alitaroosheh/InterThings.git
       path: I2CHelper
       type: git
-    version: 9615e33460a760e446135cba7167049d91c294ec
+    version: 25fa6f262085f2d2abfd0c767c6b35208e9d9de9
   IAQHelper:
-    component_hash: 81e58b8e17652851bb3ca0d5d65082026c7daded53eb416a3d0cf96e166e5fe9
+    component_hash: 4211610db36a3f5d85bba6dceb583468383c454a4e0c6e34360ffe9033c54de8
     source:
       git: https://github.com/alitaroosheh/InterThings.git
       path: IAQHelper
       type: git
-    version: 9615e33460a760e446135cba7167049d91c294ec
+    version: 25fa6f262085f2d2abfd0c767c6b35208e9d9de9
   IOHelper:
-    component_hash: 3906b60c9ac221aaaa7d490716eb5940119f3a0f36e25a20753a64b19c07ce69
+    component_hash: 3e9776421afe8a89fceca7c1e88fe35d94d519bd091d10b0f616e28d78a2cd0b
     source:
       git: https://github.com/alitaroosheh/InterThings.git
       path: IOHelper
       type: git
-    version: 9615e33460a760e446135cba7167049d91c294ec
+    version: 25fa6f262085f2d2abfd0c767c6b35208e9d9de9
   NVSHelper:
     component_hash: bbe9259c564f833d8a2bfb192520f3da08478214a55ead5dc00b5151a627b901
     source:
       git: https://github.com/alitaroosheh/InterThings.git
       path: NVSHelper
       type: git
-    version: 9615e33460a760e446135cba7167049d91c294ec
+    version: 25fa6f262085f2d2abfd0c767c6b35208e9d9de9
+  Utilities:
+    component_hash: 346f34d7373a3f700077c79268fc898cf519e835afb13b5f8b9108f8b41b60a2
+    source:
+      git: https://github.com/alitaroosheh/InterThings.git
+      path: Utilities
+      type: git
+    version: 25fa6f262085f2d2abfd0c767c6b35208e9d9de9
   WiFiHelper:
     component_hash: 8124dd07951c333ad282a0d86506191b447f9f07751647eeca61d232ff30293e
     source:
       git: https://github.com/alitaroosheh/InterThings.git
       path: WiFiHelper
       type: git
-    version: 9615e33460a760e446135cba7167049d91c294ec
+    version: 25fa6f262085f2d2abfd0c767c6b35208e9d9de9
   idf:
     component_hash: null
     source:
       type: idf
     version: 5.2.2
-manifest_hash: 25de1b5bb40f7724ef931620094087a145eb5566c3798833028feccb322d090b
+manifest_hash: 880816fc8c483f6c0ee24b08859b938cc00bb73741d431a8694cc97772d01d1a
 target: esp32s3
 version: 1.0.0

@@ -15,4 +15,7 @@ dependencies:
   IOHelper:
     path: IOHelper
     git: https://github.com/alitaroosheh/InterThings.git
+  Utilities:
+    path: Utilities
+    git: https://github.com/alitaroosheh/InterThings.git
 

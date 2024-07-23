@@ -45,6 +45,7 @@
         "aiq.h": "c",
         "iaqhelper.h": "c",
         "wifihelper.h": "c",
-        "event_groups.h": "c"
+        "event_groups.h": "c",
+        "utilities.h": "c"
     }
 }
