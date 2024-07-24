@@ -32,27 +32,7 @@ void app_main(void)
 
 
 	wifi_config_t sta = {0};
-    size_t len = sizeof(sta.sta.ssid);
-	// if (nvsLoad(configPartition, configNamespace, "ssid", (char *)sta.sta.ssid, &len) != ESP_OK)
-	// {
-	// 	nvsErasePartition(configPartition);
-	// 	ESP_LOGI(TAG, "wifi STA SSID info doesn't exist...");
-    //     nvsSave(configPartition, configNamespace, "ssid", "sta-wifi", strlen("sta-wifi"));
-    //     nvsLoad(configPartition, configNamespace, "ssid", (char *)sta.sta.ssid, &len);
-	// }
 
-    // len = sizeof(sta.sta.password);
-
-    // if (nvsLoad(configPartition, configNamespace,  "password", (char *)sta.sta.password, &len) != ESP_OK)
-	// {
-	// 	ESP_LOGI(TAG, "wifi STA password info doesn't exist...");
-    //     nvsSave(configPartition, configNamespace,  "password", "password", strlen("password"));
-    //     nvsLoad(configPartition, configNamespace,  "password", (char *)sta.sta.password, &len);
-	// }
-
-	// wifi_config_t sta = {0};
-	// strcpy((char *)sta.sta.ssid, "sta-wifi");
-	// strcpy((char *)sta.sta.password, "password");
 
 	
 	ESP_LOGI(TAG, "wifi STA SSID: \"%s\" password: \"%s\"", (char *)sta.sta.ssid, (char *)sta.sta.password);
