@@ -46,6 +46,10 @@
         "iaqhelper.h": "c",
         "wifihelper.h": "c",
         "event_groups.h": "c",
-        "utilities.h": "c"
+        "utilities.h": "c",
+        "future": "c",
+        "system_error": "c",
+        "xlocale": "c",
+        "typeinfo": "c"
     }
 }

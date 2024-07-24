@@ -32,6 +32,7 @@
 #include "lwip/err.h"
 #include "lwip/sys.h"
 #include "mqtt_client.h"
+#include "cJSON.h"
 
 
 #define configPartition       	"config_nvs"

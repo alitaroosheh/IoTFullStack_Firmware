@@ -2,6 +2,8 @@
 
 #include "IoTFullStack.h"
 
+#include "systemConfig.h"
+
 #define TAG						"systemConfig"
 
 typedef struct 
@@ -31,82 +33,66 @@ typedef struct
     certConfig cert;
 }mqttConfig;
 
+typedef struct 
+{
+    uint8_t ssid[128];
+    uint8_t password[128];
+}wifiConfig;
+
 typedef struct systemConfig
 {
     uint8_t version[6];
-    uint8_t ssid[32];
-    uint8_t password[128];
+    wifiConfig wifi;
     mqttConfig mqtt;
 }systemConfig;
 
+
+
 static systemConfig sysConfing;
 
-#define json			"json"
-#define nsMqtt			"mqtt"
 
-inline esp_err_t getConfigJson()
+esp_err_t systemConfigLoadWiFi()
 {
     size_t len;
-    if (nvsLoad(configPartition, json, json, (char *)sysConfing.version, &len) != ESP_OK)
+    uint8_t json[1024] = {0};
+    if (nvsLoad(configPartition, "wifi", "wifi", (char *)json, &len) != ESP_OK)
 	{
+        ESP_LOGE(TAG, "systemConfigLoadWiFi json not exist.");
         return ESP_ERR_NOT_FOUND;
     }
+
+    cJSON *root = cJSON_Parse((char *)json);
+    jsonGetString(root, "ssid", sysConfing.wifi.ssid);
+    jsonGetString(root, "password", sysConfing.wifi.password);
+
+    cJSON_Delete(root);
+    return ESP_OK;
 }
 
-esp_err_t loadConfig()
+
+esp_err_t systemConfigLoadMqtt()
 {
-    size_t len;
-    if (nvsLoad(configPartition, nsWiFi, "version", (char *)sysConfing.version, &len) != ESP_OK)
+    size_t volatile len;
+    uint8_t json[10240] = {0};
+    if (nvsLoad(configPartition, "mqtt", "mqtt", (char *)json, (size_t *)&len) != ESP_OK)
 	{
+        ESP_LOGE(TAG, "systemConfigLoadMqtt json not exist.");
         return ESP_ERR_NOT_FOUND;
     }
 
-    if (nvsLoad(configPartition, nsWiFi, "ssid", (char *)sysConfing.ssid, &len) != ESP_OK)
-    {
-        return ESP_ERR_NOT_FOUND;
-    }
+    cJSON *root = cJSON_Parse((char *)json);
+    jsonGetString(root, "clientId", sysConfing.mqtt.clientId);
+    jsonGetString(root, "url", sysConfing.mqtt.url);
+    jsonGetInt(root, "version", &sysConfing.mqtt.version);
+    jsonGetString(root, "userName", sysConfing.mqtt.userName);
+    jsonGetString(root, "password", sysConfing.mqtt.password);
 
-    if (nvsLoad(configPartition, nsWiFi, "password", (char *)sysConfing.password, &len) != ESP_OK)
-    {
-        return ESP_ERR_NOT_FOUND;
-    }
+    cJSON *lastwill = cJSON_GetObjectItem(root, "lastwill");
+    jsonGetString(lastwill, "topic", sysConfing.mqtt.lastwill.topic);
+    jsonGetString(lastwill, "message", sysConfing.mqtt.lastwill.message);
+    jsonGetInt(lastwill, "qos", &sysConfing.mqtt.lastwill.qos);
+    jsonGetInt(lastwill, "retain", &sysConfing.mqtt.lastwill.retain);
 
-
-    if (nvsLoad(configPartition, nsMqtt, "clientID", (char *)sysConfing.mqtt.clientId, &len) != ESP_OK)
-    {
-        return ESP_ERR_NOT_FOUND;
-    }
-
-    if (nvsLoad(configPartition, nsMqtt, "url", (char *)sysConfing.mqtt.url, &len) != ESP_OK)
-    {
-        return ESP_ERR_NOT_FOUND;
-    }
-
-    if (nvsLoad(configPartition, nsMqtt, "user", (char *)sysConfing.mqtt.userName, &len) != ESP_OK)
-    {
-        return ESP_ERR_NOT_FOUND;
-    }
-
-    if (nvsLoad(configPartition, nsMqtt, "password", (char *)sysConfing.mqtt.password, &len) != ESP_OK)
-    {
-        return ESP_ERR_NOT_FOUND;
-    }
-
-    char sVersion[5] = {0};
-    if (nvsLoad(configPartition, nsMqtt, "version", sVersion, &len) != ESP_OK)
-    {
-        return ESP_ERR_NOT_FOUND;
-    }
-    else
-    {
-        sysConfing.mqtt.version = atoi(sVersion);
-    }
-
-    
-    if (nvsLoad(configPartition, nsMqtt, "lastwill", (char *)sysConfing.mqtt.lastwill.topic, &len) != ESP_OK)
-    {
-        return ESP_ERR_NOT_FOUND;
-    }
-
+    cJSON_Delete(root);
     return ESP_OK;
 }
