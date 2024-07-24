@@ -19,35 +19,6 @@
 
 
 
-#define jsonGetString(root,key,output) { \
-    if(!cJSON_GetObjectItem(root, key)) \
-    { \
-        ESP_LOGE(TAG, "jsonGetString %s not exist.", key); \
-        return ESP_ERR_NOT_FOUND; \
-    } \
-    else \
-    { \
-        strcpy((char *)output, cJSON_GetObjectItem(root, key)->valuestring); \
-        ESP_LOGI(TAG, "key: %s", output); \
-    } \
-}
-
-
-#define jsonGetInt(root,key,output) { \
-    if(!cJSON_GetObjectItem(root, key)) \
-    { \
-        ESP_LOGE(TAG, "jsonGetInt %s not exist.", key); \
-        return ESP_ERR_NOT_FOUND; \
-    } \
-    else \
-    { \
-        *output = cJSON_GetObjectItem(root, key)->valueint; \
-        ESP_LOGI(TAG, "key: %"PRId32 "", (uint32_t)output); \
-    } \
-}
-
-
-
 
 esp_err_t                   systemConfigLoadWiFi                                      ();
 esp_err_t                   systemConfigLoadMqtt                                      ();
