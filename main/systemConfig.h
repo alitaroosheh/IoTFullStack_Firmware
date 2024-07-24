@@ -60,13 +60,14 @@ typedef struct
     uint8_t password[128];
 }wifiConfig;
 
-typedef struct systemConfig
+typedef struct systemConfiguration
 {
     uint8_t version[6];
     wifiConfig wifi;
     mqttConfig mqtt;
-}systemConfig;
+}systemConfiguration;
 
 
-esp_err_t                   systemConfigLoadWiFi                                      ();
-esp_err_t                   systemConfigLoadMqtt                                      ();
+esp_err_t                   systemConfigLoadWiFi                                        ();
+esp_err_t                   systemConfigLoadMqtt                                        ();
+esp_err_t                   systemConfig                                                (char *configPartition);

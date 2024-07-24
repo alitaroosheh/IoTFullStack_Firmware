@@ -22,6 +22,8 @@ void app_main(void)
 
 	nvsInit(configPartition, false);
 
+	systemConfig(configPartition);
+
 	wifiInit();
 
 	

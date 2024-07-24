@@ -19,6 +19,7 @@
 #include "WiFiHelper.h"
 #include "NVSHelper.h"
 #include "IOHelper.h"
+#include "systemConfig.h"
 #include "Utilities.h"
 #include "math.h"
 #include "freertos/FreeRTOS.h"
