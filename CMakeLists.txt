@@ -8,6 +8,7 @@ include($ENV{IDF_PATH}/tools/cmake/project.cmake)
 project(IoTFullStack_Firmware)
 
 
-target_add_binary_data(${CMAKE_PROJECT_NAME}.elf "main/cert/client.crt" TEXT)
-target_add_binary_data(${CMAKE_PROJECT_NAME}.elf "main/cert/client.key" TEXT)
-target_add_binary_data(${CMAKE_PROJECT_NAME}.elf "main/cert/mosquitto.org.crt" TEXT)
+
+target_add_binary_data(mqtt_ssl.elf "main/cert/mqtt_broker.pem" TEXT)
+
+

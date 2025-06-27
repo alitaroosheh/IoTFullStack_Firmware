@@ -7,7 +7,7 @@
         "IDF_CCACHE_ENABLE": "1",
         "ESP_ROM_ELF_DIR": "C:\\Users\\alita\\.espressif\\tools\\esp-rom-elfs\\20230320/"
     },
-    "idf.espIdfPathWin": "C:\\Users\\alita\\esp\\v5.2.2\\esp-idf",
+    "idf.espIdfPathWin": "C:\\Users\\alita\\esp\\v5.4\\esp-idf",
     "idf.openOcdConfigs": [
         "interface/ftdi/esp32_devkitj_v1.cfg",
         "target/esp32s3.cfg"
@@ -51,5 +51,6 @@
         "system_error": "c",
         "xlocale": "c",
         "typeinfo": "c"
-    }
+    },
+    "idf.pythonInstallPath": "C:\\Users\\alita\\.espressif\\tools\\idf-python\\3.11.2\\python.exe"
 }
